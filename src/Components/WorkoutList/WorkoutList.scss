@@ -1,0 +1,14 @@
+.workouts{
+    &__title{
+        text-align: center;
+    }
+
+    &__dropdown{
+        display: flex;
+        margin: 0 auto;
+    }
+
+    &__list{
+    padding: 0;
+}
+}
