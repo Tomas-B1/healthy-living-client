@@ -10,7 +10,7 @@ function WorkoutCard({ id, name, img, muscle }) {
           src={img}
           alt={`${name}`}
         />
-        <h3 className="workout-card__name">{name}</h3>
+        <h3 className="workout-card__name">{name.toUpperCase()}</h3>
         <p className="workout-card__muscle">{muscle}</p>
       </div>
     </Link>

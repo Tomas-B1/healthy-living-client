@@ -13,7 +13,7 @@ function WorkoutDetail({ workoutInfo }) {
     <section className="workoutDetail">
       <div className="workoutDetail__page">
       <img
-          className="product__arrow-icon"
+          className="workoutDetail__arrow-icon"
           src={backArrow}
           alt="backArrow"
           onClick={previousPage}
@@ -24,12 +24,15 @@ function WorkoutDetail({ workoutInfo }) {
           alt={workoutInfo.name}
         />
         <div className="workoutDetail__info">
-          <h2 className="workoutDetail__title">{workoutInfo.name}</h2>
-          <h3 className="workoutDetail__muscle">{workoutInfo.muscle}</h3>
-          <h3 className="workoutDetail__difficulty">{workoutInfo.difficulty}</h3>
-          <p className="workoutDetail__descTitle">Description</p>
+          <h2 className="workoutDetail__title">{workoutInfo.name.toUpperCase()}</h2>
+          <h3 className="workoutDetail__muscle">Muscle:</h3>
+          <p>{workoutInfo.muscle}</p>
+          <h3 className="workoutDetail__difficulty">Difficulty:</h3>
+          <p>{workoutInfo.difficulty}</p>
+          <h3 className="workoutDetail__descTitle">Description</h3>
           <p className="workoutDetail__description">{workoutInfo.description}</p>
         </div>
+        <button className="workoutDetail__button">SAVE TO PROFILE</button>
       </div>
     </section>
   );

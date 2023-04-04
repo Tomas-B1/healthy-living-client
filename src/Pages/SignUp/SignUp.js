@@ -13,7 +13,7 @@ function Register() {
     const handleRegister = (event) => {
         event.preventDefault();
 
-        axios.post("http://localhost:8080/register", {
+        axios.post("http://localhost:8080/user/register", {
             email: event.target.email.value,
             name: event.target.name.value,
             password: event.target.password.value

@@ -6,15 +6,21 @@ import "../WorkoutList/WorkoutList.scss"
 function WorkoutList() {
   const [workout, setWorkout] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [option, setOption] = useState("All");
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/workout`)
+      axios.get(`http://localhost:8080/workout`)
     .then((response) => {
       console.log(response.data)
       setWorkout(response.data);
       setIsLoading(false);
     });
   }, []);
+
+
+  function handleSelectChange(event) {
+    setOption(event.target.value);
+  }
 
   if (isLoading) {
     return <h1>Loading...</h1>;
@@ -27,7 +33,8 @@ function WorkoutList() {
           className="workouts__dropdown"
           name="workouts"
           id="workouts"
-          // onChange={handleSelectChange}
+          value={option}
+          onChange={handleSelectChange}
         >
           <option value="All">All Workouts</option>
           <option value="Biceps">Biceps</option>
