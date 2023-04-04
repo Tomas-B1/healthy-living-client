@@ -1,0 +1,30 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+
+    &__nameLabel{
+        margin-bottom: 0.5rem;
+    }
+
+    &__emailLabel{
+        margin: 0.5rem 0;
+    }
+
+    &__passwordLabel{
+        margin: 0.5rem 0;
+    }
+
+    &__button{
+        width: 5rem;
+        display: flex;
+        justify-content: center;
+        margin: 1rem auto;
+    }
+}

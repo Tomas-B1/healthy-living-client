@@ -14,9 +14,11 @@ function HomeHeader() {
                   <h3>Home</h3>
                 </a>
               </button>
-              <button className={"header__button"}>
-                  <h3>Login</h3>
-              </button>
+              <Link to={"/login"}>
+                <button className={"header__button"}>
+                    <h3>Login</h3>
+                </button>
+              </Link>
               <Link to={"/SignUp"}>
                 <button className={"header__button"}>
                     <h3>Sign Up</h3>

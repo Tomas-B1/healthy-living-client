@@ -1,0 +1,39 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
+.home{
+    &__title{
+        font-size: 2rem;
+    }
+
+    &__workouts{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 0.25rem;
+        width: 70%;
+        margin: 1rem auto;
+    }
+
+    &__workouts-img{
+        width: 10rem;
+        display: flex;
+    }
+
+    &__plans{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 0.25rem;
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    &__plans-img{
+        width: 10rem;
+        display: flex;
+    }
+}

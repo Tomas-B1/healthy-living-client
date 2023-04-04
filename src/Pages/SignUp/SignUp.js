@@ -1,15 +1,11 @@
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import HomeHeader from '../../Components/HomeHeader/HomeHeader';
 import "./SignUp.scss";
 
 function Register() {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     
-    if (localStorage.authToken) {
-        // navigate("/user-profile");
-    }
-
     const handleRegister = (event) => {
         event.preventDefault();
 
@@ -20,7 +16,7 @@ function Register() {
         })
         .then(response => {
             localStorage.authToken = response.data.token;
-            // navigate("/user-profile");
+             navigate("/login");
         })
         .catch(error => {
             // TODO: Handle error gracefully, probably some error message

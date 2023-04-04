@@ -1,0 +1,33 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
+.profile-header{
+    border-bottom: 0.3rem double black;
+    &__name {
+        color: black;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__navbar a {
+        text-decoration: none;
+    }
+
+    &__routes{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    &__routes a{
+        text-decoration: none;
+        color: black;
+    }
+
+    &__button{
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        border: none;
+        background-color: white;
+    }
+}
