@@ -17,9 +17,11 @@ function HomeHeader() {
               <button className={"header__button"}>
                   <h3>Login</h3>
               </button>
-              <button className={"header__button"}>
-                  <h3>Sign Up</h3>
-              </button>
+              <Link to={"/SignUp"}>
+                <button className={"header__button"}>
+                    <h3>Sign Up</h3>
+                </button>
+              </Link>
             </div>
           </nav>
         </header>
