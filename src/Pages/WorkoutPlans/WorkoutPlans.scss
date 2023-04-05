@@ -1,0 +1,15 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
+.workoutlist{
+    &__day{
+        width: 70%;
+        display: flex;
+        margin: 1rem auto;
+    }
+
+    &__image{
+        width: 100%;
+    }
+}

@@ -5,6 +5,8 @@ import Login from "./Pages/Login/Login";
 import Workout from "./Pages/Workout/Workout";
 import WorkoutInfo from "./Pages/WorkoutInfo/WorkoutInfo"
 import UserProfile from "./Pages/UserProfile/UserProfile";
+import WorkoutPlans from "./Pages/WorkoutPlans/WorkoutPlans";
+import Monday from "./Pages/Monday/Monday"
 
 function App() {
   return (
@@ -16,6 +18,14 @@ function App() {
         <Route path="/userprofile" element={<UserProfile />} />
         <Route path="/workout" element={<Workout />} />
         <Route path="/workout/:id" element={<WorkoutInfo />} />
+        <Route path="/workoutplans" element={<WorkoutPlans/>}/>
+        <Route path="/monday" element={<Monday/>}/>
+        {/* <Route path="" element={</>}/>*/}
+         {/* <Route path="" element={</>}/>
+         <Route path="" element={</>}/>
+         <Route path="" element={</>}/>
+         <Route path="" element={</>}/>
+         <Route path="" element={</>}/> */}
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
