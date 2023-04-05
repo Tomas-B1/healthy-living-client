@@ -6,7 +6,14 @@ import Workout from "./Pages/Workout/Workout";
 import WorkoutInfo from "./Pages/WorkoutInfo/WorkoutInfo"
 import UserProfile from "./Pages/UserProfile/UserProfile";
 import WorkoutPlans from "./Pages/WorkoutPlans/WorkoutPlans";
-import Monday from "./Pages/Monday/Monday"
+import Monday from "./Pages/Monday/Monday";
+import Tuesday from "./Pages/Tuesday/Tuesday";
+import Wednesday from "./Pages/Wednesday/Wednesday";
+import Thursday from "./Pages/Thursday/Thursday";
+import Friday from "./Pages/Friday/Friday";
+import Saturday from "./Pages/Saturday/Saturday";
+import Sunday from "./Pages/Sunday/Sunday";
+
 
 function App() {
   return (
@@ -20,12 +27,12 @@ function App() {
         <Route path="/workout/:id" element={<WorkoutInfo />} />
         <Route path="/workoutplans" element={<WorkoutPlans/>}/>
         <Route path="/monday" element={<Monday/>}/>
-        {/* <Route path="" element={</>}/>*/}
-         {/* <Route path="" element={</>}/>
-         <Route path="" element={</>}/>
-         <Route path="" element={</>}/>
-         <Route path="" element={</>}/>
-         <Route path="" element={</>}/> */}
+        <Route path="/tuesday" element={<Tuesday/>}/>
+        <Route path="/wednesday" element={<Wednesday/>}/>
+         <Route path="/thursday" element={<Thursday/>}/>
+         <Route path="/friday" element={<Friday/>}/>
+         <Route path="/saturday" element={<Saturday/>}/>
+         <Route path="/sunday" element={<Sunday/>}/>
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>

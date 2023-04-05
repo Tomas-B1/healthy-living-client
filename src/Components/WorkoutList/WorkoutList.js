@@ -11,7 +11,6 @@ function WorkoutList() {
   useEffect(() => {
       axios.get(`http://localhost:8080/workout`)
     .then((response) => {
-      console.log(response.data)
       setWorkout(response.data);
       setIsLoading(false);
     });

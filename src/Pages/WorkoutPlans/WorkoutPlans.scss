@@ -4,12 +4,18 @@
 
 .workoutlist{
     &__day{
-        width: 70%;
+        width: 7rem;
         display: flex;
         margin: 1rem auto;
     }
 
     &__image{
-        width: 100%;
+        width: 7rem;
+    }
+
+    &__link{
+        display: flex;
+        width: 7rem;
+        margin: 0 auto;
     }
 }

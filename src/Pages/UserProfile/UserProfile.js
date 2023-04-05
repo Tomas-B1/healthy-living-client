@@ -6,19 +6,9 @@ import workoutPlans from "../../assets/icons/workout-plans.png"
 import ProfileHeader from "../../Components/ProfileHeader/ProfileHeader"
 import "./UserProfile.scss"
 
-/*
-    if token doesn't exist: send user to the homepage
-    if token exists: use it to get data from the backend!
-        - when getting data: if token is invalid: send them to home page
-        - if token works: set the response on state
-    
-    - using user-profile state: render user information
-*/
 function UserProfile() {
     const [user, setUser]= useState(null)
     const navigate = useNavigate();
-    // const authToken = localStorage.authToken;
-    // const jwtToken = localStorage.authToken;
 
     useEffect(() => {
         const jwtToken = localStorage.authToken;
@@ -27,8 +17,7 @@ function UserProfile() {
             navigate("/");
             return ;
         }
-        
-        // JWT token does exist
+
         axios
             .get("http://localhost:8080/user/profile", {
                 headers: {
@@ -45,11 +34,10 @@ function UserProfile() {
             })
     }, [navigate]);
 
-    // if (authToken) {
         return (
             <section className="home">
                 <ProfileHeader/>
-                <h1 className="home__title">Welcome Back!</h1>
+                <h1 className="home__title">Welcome Back! {user}</h1>
                     <Link to="/workout">
                         <div className="home__workouts">
                             <img className="home__workouts-img" src={dumbbell} alt="Dumbbell"/>
@@ -67,6 +55,5 @@ function UserProfile() {
         );
     }
 
-// }
 
 export default UserProfile;

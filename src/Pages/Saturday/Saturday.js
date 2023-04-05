@@ -1,14 +1,13 @@
 import ProfileHeader from "../../Components/ProfileHeader/ProfileHeader";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./Monday.scss"
 
-function Monday() {
+function Saturday() {
     const [workout, setWorkout] = useState(null)
 
     useEffect(() => {
       axios
-        .get(`http://localhost:8080/monday`)
+        .get(`http://localhost:8080/saturday`)
         .then((res) => {
           setWorkout(res.data);
         })
@@ -23,7 +22,7 @@ function Monday() {
       <>
       <ProfileHeader/>
       <section className="monday">
-        <h2>Monday</h2>
+        <h2>Saturday</h2>
         <div className="monday__container">
           <div className="monday__list">
             {workout.map((workout) => {
@@ -55,4 +54,4 @@ function Monday() {
     )
   }
   
-  export default Monday;
+  export default Saturday;
