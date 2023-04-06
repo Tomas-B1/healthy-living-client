@@ -4,20 +4,22 @@ import axios from "axios";
 import "./Tuesday.scss"
 
 function Tuesday() {
-    const [workout, setWorkout] = useState(null)
+  const [workout, setWorkout] = useState(null)
 
-    useEffect(() => {
-      axios
-        .get(`http://localhost:8080/tuesday`)
-        .then((res) => {
-          setWorkout(res.data);
-        })
-        .catch((err) => console.error(err));
-    }, []);
-  
-    if (!workout) {
-      return <h2>Loading data...</h2>;
-    }
+  const userId = sessionStorage.getItem('user.id')
+
+  useEffect(() => {
+   axios
+     .get(`http://localhost:8080/schedule/${userId}/tuesday`)
+     .then((res) => {
+       setWorkout(res.data);
+     })
+     .catch((err) => console.error(err));
+ }, [userId]);
+
+   if (!workout) {
+     return <h2>Loading data...</h2>;
+   }
 
     return(
       <>

@@ -6,15 +6,17 @@ import "./Monday.scss"
 function Monday() {
     const [workout, setWorkout] = useState(null)
 
-    useEffect(() => {
-      axios
-        .get(`http://localhost:8080/monday`)
-        .then((res) => {
-          setWorkout(res.data);
-        })
-        .catch((err) => console.error(err));
-    }, []);
-  
+   const userId = sessionStorage.getItem('user.id')
+
+   useEffect(() => {
+    axios
+      .get(`http://localhost:8080/schedule/${userId}/monday`)
+      .then((res) => {
+        setWorkout(res.data);
+      })
+      .catch((err) => console.error(err));
+  }, [userId]);
+
     if (!workout) {
       return <h2>Loading data...</h2>;
     }

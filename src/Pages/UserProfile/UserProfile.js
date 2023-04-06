@@ -26,6 +26,8 @@ function UserProfile() {
             })
             .then(response => {
                 setUser(response.data);
+                console.log(response.data[0].id)
+                sessionStorage.setItem("user.id", response.data[0].id)
             })
             .catch(error => {
                 localStorage.removeItem("authToken");

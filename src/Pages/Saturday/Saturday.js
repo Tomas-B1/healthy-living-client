@@ -3,20 +3,22 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Saturday() {
-    const [workout, setWorkout] = useState(null)
+  const [workout, setWorkout] = useState(null)
 
-    useEffect(() => {
-      axios
-        .get(`http://localhost:8080/saturday`)
-        .then((res) => {
-          setWorkout(res.data);
-        })
-        .catch((err) => console.error(err));
-    }, []);
-  
-    if (!workout) {
-      return <h2>Loading data...</h2>;
-    }
+  const userId = sessionStorage.getItem('user.id')
+
+  useEffect(() => {
+   axios
+     .get(`http://localhost:8080/schedule/${userId}/saturday`)
+     .then((res) => {
+       setWorkout(res.data);
+     })
+     .catch((err) => console.error(err));
+ }, [userId]);
+
+   if (!workout) {
+     return <h2>Loading data...</h2>;
+   }
 
     return(
       <>
