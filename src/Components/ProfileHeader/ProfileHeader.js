@@ -10,19 +10,13 @@ function ProfileHeader() {
               </Link>
             <div className="profile-header__routes">
             <Link to={"/workout"}>
-                <button className="profile-header__button">
-                    <h3>Workouts</h3>
-                </button>
+                <button className="profile-header__button">Workouts</button>
               </Link>
               <Link to={"/workoutplans"}>
-                <button className="profile-header__button">
-                    <h3>Workout Plans</h3>
-                </button>
+                <button className="profile-header__button">Workout Plans</button>
               </Link>
               <Link to={"/"}>
-                <button className="profile-header__button">
-                    <h3>Logout</h3>
-                </button>
+                <button className="profile-header__button">Logout</button>
               </Link>
             </div>
           </nav>

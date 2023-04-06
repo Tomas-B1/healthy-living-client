@@ -1,13 +1,15 @@
 import HomeHeader from "../../Components/HomeHeader/HomeHeader"
 import HowItWorks from "../../Components/HowItWorks/HowItWorks"
-
+import "./Home.scss"
 
 function Home() {
     return (
-      <main className="home-page">
+      <section>
         <HomeHeader />
-        <HowItWorks />
-      </main>
+        <main className="home-page">
+          <HowItWorks />
+        </main>
+      </section>
     );
   }
   

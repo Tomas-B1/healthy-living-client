@@ -7,7 +7,7 @@ import ProfileHeader from "../../Components/ProfileHeader/ProfileHeader"
 import "./UserProfile.scss"
 
 function UserProfile() {
-    const [user, setUser]= useState(null)
+    const [user, setUser]= useState("")
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,14 +19,13 @@ function UserProfile() {
         }
 
         axios
-            .get("http://localhost:8080/user/profile", {
+            .get("http://localhost:8080/user", {
                 headers: {
                     Authorization: `Bearer ${jwtToken}`
                 }
             })
             .then(response => {
-                setUser(response.data.user);
-                console.log(response);
+                setUser(response.data);
             })
             .catch(error => {
                 localStorage.removeItem("authToken");
@@ -34,24 +33,29 @@ function UserProfile() {
             })
     }, [navigate]);
 
+    if(!user){
+        return<h1>Loading</h1>
+    }
+
         return (
+            <>
+            <ProfileHeader/>
             <section className="home">
-                <ProfileHeader/>
-                <h1 className="home__title">Welcome Back! {user}</h1>
-                    <Link to="/workout">
+                <h1 className="home__title">Welcome Back {user[0].name}!</h1>
+                    <Link to="/workout" className="home__links">
                         <div className="home__workouts">
                             <img className="home__workouts-img" src={dumbbell} alt="Dumbbell"/>
                             <p className="home__workouts-text">View Workouts</p>
                         </div>
                     </Link>
-                    <Link to="/workoutplans">
+                    <Link to="/workoutplans" className="home__links">
                         <div className="home__plans">
                             <img className="home__plans-img" src={workoutPlans} alt="Workout plan"/>
                             <p className="home__plans-text">View Workout Plans</p>
                         </div>
                     </Link>
-                
             </section>
+            </>
         );
     }
 

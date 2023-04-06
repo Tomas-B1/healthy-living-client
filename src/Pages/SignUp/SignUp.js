@@ -27,8 +27,9 @@ function Register() {
     return (
         <>
             <HomeHeader/>
-            <h1>Sign Up Below</h1>
-            <form onSubmit={handleRegister} class="signup">
+            <section className='signup'>
+            <h1 className='signup__title'>Sign Up Below</h1>
+            <form onSubmit={handleRegister} class="signup__form">
                 <label className='signup__nameLabel' htmlFor="name">Name:</label>
                 <input className='signup__nameInput' type="text" id="name"></input>
                 <label className='signup__emailLabel' htmlFor='email'>Email:</label> 
@@ -37,6 +38,7 @@ function Register() {
                 <input className='signup__passwordInput' type="password" id="password"></input>
                 <button className='signup__button'>SIGN UP</button>
             </form>
+            </section>
         </>
     )
 }

@@ -3,8 +3,20 @@
 @use "../../styles/variables" as *;
 
 .home{
+    height: 100vh;
+    background-color: #ede0d4;
+
     &__title{
         font-size: 2rem;
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    &__links{
+        display: flex;
+        width: 70%;
+        margin: 1rem auto;
+        text-decoration: none;
     }
 
     &__workouts{
@@ -13,8 +25,8 @@
         align-items: center;
         border: 1px solid black;
         border-radius: 0.25rem;
-        width: 70%;
-        margin: 1rem auto;
+        width: 100%;
+        background-color: white;
     }
 
     &__workouts-img{
@@ -28,12 +40,26 @@
         align-items: center;
         border: 1px solid black;
         border-radius: 0.25rem;
-        width: 70%;
-        margin: 0 auto;
+        width: 100%;
+        background-color: white;
     }
 
     &__plans-img{
-        width: 10rem;
+        width: 8rem;
+        padding: 1rem 0;
         display: flex;
     }
+
+    &__workouts-text{
+        color: black;
+        font-weight: bold;
+        padding-bottom: 1rem;
+    }
+
+    &__plans-text{
+        color: black;
+        font-weight: bold;
+        padding-bottom: 1rem;
+    }
+
 }

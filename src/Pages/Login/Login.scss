@@ -3,11 +3,21 @@
 @use "../../styles/variables" as *;
 
 .login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    width: 80%;
+    height: 100vh;
+    background-color: #ede0d4;
+
+    &__title{
+        text-align: center;
+        padding-top: 15rem;
+    }
+
+    &__form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 1rem auto;
+        width: 80%;
+    }
 
     &__nameLabel{
         margin-bottom: 0.5rem;
@@ -23,8 +33,13 @@
 
     &__button{
         width: 5rem;
+        height: 2rem;
         display: flex;
         justify-content: center;
+        align-items: center;
         margin: 1rem auto;
+        border: none;
+        border-radius: 1rem;
+        background-color: #a4ac86;
     }
 }

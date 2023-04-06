@@ -10,6 +10,7 @@
         height: 15rem;
         border: 1px solid black;
         border-radius: 0.25rem;
+        background-color: white;
     }
 
     &__title{
@@ -28,13 +29,21 @@
     &__text{
         padding: 0 1rem 0 1rem;
         text-align: center;
+        font-size: 1rem;
+        font-weight: bold;
+
     }
 
     &__button{
         display: flex;
         justify-content: center;
+        align-items: center;
         margin: 1rem auto;
-
+        border: none;
+        border-radius: 1rem;
+        background-color: #a4ac86;
+        height: 2rem;
+        width: 5rem;
     }
 
     &__workouts{
@@ -45,6 +54,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        background-color: white;
     }
 
     &__profile{
@@ -55,6 +65,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        background-color: white;
     }
 }
 
@@ -63,11 +74,14 @@
         display: flex;
         justify-content: center;
         text-align: center;
+        margin-bottom: 1rem;
     }
 
     &__container{
         border: 1px solid black;
         border-radius: 0.25rem;
+        background-color:#ddbea9;
+        padding: 1rem 0 1rem 0;
     }
 
     &__text{

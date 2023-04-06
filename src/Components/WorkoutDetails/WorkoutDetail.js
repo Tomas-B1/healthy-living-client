@@ -1,126 +1,50 @@
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import backArrow from "../../assets/icons/back-arrow.png";
 import "./WorkoutDetails.scss";
 
 function WorkoutDetail({ workoutInfo }) {
-    const navigate = useNavigate();
+  const [value, setValue]= useState('') 
+  const [user, setUser]= useState(null)
+  const navigate = useNavigate();
     
     const previousPage = () => {
         navigate(-1); // Takes user back to previous page
       }
 
-      const handleAddMonday = () => {
-        axios.post("http://localhost:8080/monday", {
-          name: workoutInfo.name,
-          description: workoutInfo.description,
-          product_img: workoutInfo.product_img,
-          muscle: workoutInfo.muscle,
-          difficulty: workoutInfo.difficulty
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            // setSuccessfulAdd(true);
-          }
-          })
-        .catch((error) => {
-          // setDuplicateItem(true);
-        });
-      };
+      const handleChange =(event) => {
+        setValue(event.target.value)
+      }
 
-      const handleAddTuesday = () => {
-        axios.post("http://localhost:8080/tuesday", {
-          name: workoutInfo.name,
-          description: workoutInfo.description,
-          product_img: workoutInfo.product_img,
-          muscle: workoutInfo.muscle,
-          difficulty: workoutInfo.difficulty
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            // setSuccessfulAdd(true);
-          }
-          })
-        .catch((error) => {
-          // setDuplicateItem(true);
-        });
-      };
-      const handleAddWednesday = () => {
-        axios.post("http://localhost:8080/wednesday", {
-          name: workoutInfo.name,
-          description: workoutInfo.description,
-          product_img: workoutInfo.product_img,
-          muscle: workoutInfo.muscle,
-          difficulty: workoutInfo.difficulty
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            // setSuccessfulAdd(true);
-          }
-          })
-        .catch((error) => {
-          // setDuplicateItem(true);
-        });
-      };
-      const handleAddThursday = () => {
-        axios.post("http://localhost:8080/thursday", {
-          name: workoutInfo.name,
-          description: workoutInfo.description,
-          product_img: workoutInfo.product_img,
-          muscle: workoutInfo.muscle,
-          difficulty: workoutInfo.difficulty
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            // setSuccessfulAdd(true);
-          }
-          })
-        .catch((error) => {
-          // setDuplicateItem(true);
-        });
-      };
-      const handleAddFriday = () => {
-        axios.post("http://localhost:8080/friday", {
-          name: workoutInfo.name,
-          description: workoutInfo.description,
-          product_img: workoutInfo.product_img,
-          muscle: workoutInfo.muscle,
-          difficulty: workoutInfo.difficulty
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            // setSuccessfulAdd(true);
-          }
-          })
-        .catch((error) => {
-          // setDuplicateItem(true);
-        });
-      };
-      const handleAddSaturday = () => {
-        axios.post("http://localhost:8080/saturday", {
-          name: workoutInfo.name,
-          description: workoutInfo.description,
-          product_img: workoutInfo.product_img,
-          muscle: workoutInfo.muscle,
-          difficulty: workoutInfo.difficulty
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            // setSuccessfulAdd(true);
-          }
-          })
-        .catch((error) => {
-          // setDuplicateItem(true);
-        });
-      };
+      useEffect(() => {
+        const jwtToken = localStorage.authToken;
+       
+        if (!jwtToken) {
+            navigate("/");
+            return ;
+        }
 
-      const handleAddSunday = () => {
-        axios.post("http://localhost:8080/Sunday", {
-          name: workoutInfo.name,
-          description: workoutInfo.description,
-          product_img: workoutInfo.product_img,
-          muscle: workoutInfo.muscle,
-          difficulty: workoutInfo.difficulty
+        axios
+            .get("http://localhost:8080/user", {
+                headers: {
+                    Authorization: `Bearer ${jwtToken}`
+                }
+            })
+            .then(response => {
+                setUser(response.data);
+            })
+          })
+
+    if(!user){
+        return<h1>Loading</h1>
+    }
+
+      const handleAddWorkout = () => {
+        axios.post("http://localhost:8080/schedule", {
+          workout_id: workoutInfo.id,
+          user_id: user[0].id,
+          DayOfWeek: value
         })
         .then((response) => {
           if (response.status === 200) {
@@ -156,13 +80,27 @@ function WorkoutDetail({ workoutInfo }) {
           <p className="workoutDetail__description">{workoutInfo.description}</p>
         </div>
         <h3>Pick a day:</h3>
-        <button className="workoutDetail__button" onClick={handleAddMonday}>Monday</button>
-        <button className="workoutDetail__button" onClick={handleAddTuesday}>Tuesday</button>
+        <select
+          className="workouts__dropdown"
+          name="workouts"
+          id="workouts"
+          onChange={handleChange}
+        >
+          <option value="monday">Monday</option>
+          <option value="tuesday">Tuesday</option>
+          <option value="wednesday">Wednesday</option>
+          <option value="thursday">Thursday</option>
+          <option value="friday">Friday</option>
+          <option value="saturday">Saturday</option>
+          <option value="sunday">Sunday</option>
+        </select>
+        <button className="workoutDetail__button" onClick={handleAddWorkout}>Add Workout</button>
+        {/* <button className="workoutDetail__button" onClick={handleAddTuesday}>Tuesday</button>
         <button className="workoutDetail__button" onClick={handleAddWednesday}>Wednesday</button>
         <button className="workoutDetail__button" onClick={handleAddThursday}>Thursday</button>
         <button className="workoutDetail__button" onClick={handleAddFriday}>Friday</button>
         <button className="workoutDetail__button" onClick={handleAddSaturday}>Saturday</button>
-        <button className="workoutDetail__button" onClick={handleAddSunday}>Sunday</button>
+        <button className="workoutDetail__button" onClick={handleAddSunday}>Sunday</button> */}
       </div>
     </section>
   );

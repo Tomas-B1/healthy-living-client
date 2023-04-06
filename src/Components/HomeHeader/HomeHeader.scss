@@ -4,10 +4,13 @@
 
 .header{
     border-bottom: 0.3rem double black;
+    background-color: #a4ac86;
     &__name {
+        font-size: 2rem;
         color: black;
         display: flex;
         justify-content: center;
+        padding-top: 1rem;
     }
 
     &__navbar a {
@@ -28,6 +31,6 @@
         display: flex;
         align-items: center;
         border: none;
-        background-color: white;
+        background-color: #a4ac86;
     }
 }

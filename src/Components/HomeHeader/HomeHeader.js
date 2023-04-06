@@ -9,20 +9,14 @@ function HomeHeader() {
                 <h1 className="header__name">Healthy Living</h1>
               </Link>
             <div className="header__routes">
-              <button className={"header__button"}>
-                <a href="/">
-                  <h3>Home</h3>
-                </a>
-              </button>
+            <Link to="/"> 
+              <button className={"header__button"}>Home</button>
+            </Link>  
               <Link to={"/login"}>
-                <button className={"header__button"}>
-                    <h3>Login</h3>
-                </button>
+                <button className={"header__button"}>Login</button>
               </Link>
               <Link to={"/SignUp"}>
-                <button className={"header__button"}>
-                    <h3>Sign Up</h3>
-                </button>
+                <button className={"header__button"}>Sign Up</button>
               </Link>
             </div>
           </nav>
