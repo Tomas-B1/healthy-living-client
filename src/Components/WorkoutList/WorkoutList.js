@@ -17,33 +17,6 @@ function WorkoutList() {
     });
   }, []);
 
-  // let Biceps = workout.filter(function(work) {
-  //   return work.muscle === "Biceps";
-  //  });
-
-  //   workout.filter(function(work) {
-  //   return work.muscle === "Calves";
-  //   });
-
-  //   workout.filter(function(work) {
-  //   return work.muscle === "Pectorals";
-  //   });
-    
-  // let Traps =  workout.filter(function(work) {
-  //   return work.muscle === "Traps";
-  // });
-
-  // let Triceps =  workout.filter(function(work) {
-  //   return work.muscle === "Triceps";
-  // });
-
-  // let Quads =  workout.filter(function(work) {
-  //   return work.muscle === "Quads";
-  // });
-
-  // let Upper =  workout.filter(function(work) {
-  //   return work.muscle === "Upper Back";
-  // });
 
   if (isLoading) {
     return <h1>Loading...</h1>;
