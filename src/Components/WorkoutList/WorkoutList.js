@@ -7,6 +7,7 @@ function WorkoutList() {
   const [workout, setWorkout] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [value, setValue]= useState("")
+  let muscle;
 
   useEffect(() => {
       axios.get(`http://localhost:8080/workout`)
@@ -20,9 +21,40 @@ function WorkoutList() {
     return <h1>Loading...</h1>;
   }
 
+  let Biceps =  workout.filter(function(work) {
+    return work.muscle === "Biceps";
+  });
+
+  console.log(Biceps);
+
+  let Calves =  workout.filter(function(work) {
+    return work.muscle === "Calves";
+  });
+
+  let Pectorals =  workout.filter(function(work) {
+    return work.muscle === "Pectorals";
+  });
+
+  let Traps =  workout.filter(function(work) {
+    return work.muscle === "Traps";
+  });
+
+  let Triceps =  workout.filter(function(work) {
+    return work.muscle === "Triceps";
+  });
+
+  let Quads =  workout.filter(function(work) {
+    return work.muscle === "Quads";
+  });
+
+  let Upper =  workout.filter(function(work) {
+    return work.muscle === "Upper Back";
+  });
+
   const handleChange =(event) => {
-    setValue(event.target.value)
+     setValue(event.target.value)
   }
+
   
   return (
       <main className="workouts">

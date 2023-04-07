@@ -1,11 +1,14 @@
 .workouts{
+    background-color: #f5ebe0;
+
     &__title{
         text-align: center;
+        padding: 1rem 0 0 0;
     }
 
     &__dropdown{
         display: flex;
-        margin: 0 auto;
+        margin: 1rem auto;
     }
 
     &__list{

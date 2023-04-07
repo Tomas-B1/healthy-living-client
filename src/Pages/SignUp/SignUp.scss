@@ -4,7 +4,7 @@
 
 .signup{
     height: 100vh;
-    background-color: #ede0d4;
+    background-color: #f5ebe0;
 
     &__title{
         text-align: center;
@@ -21,14 +21,32 @@
 
     &__nameLabel{
         margin-bottom: 0.5rem;
+        font-weight: 600;
     }
 
     &__emailLabel{
         margin: 0.5rem 0;
+        font-weight: 600;
     }
 
     &__passwordLabel{
         margin: 0.5rem 0;
+        font-weight: 600;
+    }
+
+    &__nameInput{
+        border-radius: 0.25rem;
+        border: 1px solid #a4ac86;
+    }
+
+    &__emailInput{
+        border-radius: 0.25rem;
+        border: 1px solid #a4ac86;
+    }
+
+    &__passwordInput{
+        border-radius: 0.25rem;
+        border: 1px solid #a4ac86;
     }
 
     &__button{

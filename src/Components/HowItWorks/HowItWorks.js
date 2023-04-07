@@ -7,7 +7,7 @@ import profile from "../../assets/icons/profile-symbol.png"
 function HomeHeader() {
     return (
         <section className="info">
-            <h2 className="info__title">How It Works</h2>
+            <h2 className="info__title">HOW IT WORKS</h2>
             <div className="info__signup">
                 <img className="info__icon" src={checkmark} alt="checkmark"/>
                 <p className="info__text">Create your profile now to get started today!</p>
@@ -19,7 +19,7 @@ function HomeHeader() {
             </div>
             <div className="info__profile">
                 <img className="info__icon" src={profile} alt="profile"/>
-                <p className="info__text">Save workouts to your personal profile</p>
+                <p className="info__text info__profileText">Save workouts to your personal profile</p>
             </div>
             <div className="whyChoose">
                 <h2 className="whyChoose__title">WHY CHOOSE HEALTHY LIVING?</h2>

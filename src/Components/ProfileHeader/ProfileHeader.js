@@ -2,6 +2,12 @@ import "./ProfileHeader.scss";
 import { Link } from 'react-router-dom';
 
 function ProfileHeader() {
+ 
+  const handleLogout = () => {
+    localStorage.removeItem("authToken");
+    sessionStorage.removeItem("user.id")
+  }
+
     return (
         <header className="profile-header">
           <nav className="profile-header__navbar">
@@ -16,7 +22,7 @@ function ProfileHeader() {
                 <button className="profile-header__button">Workout Plans</button>
               </Link>
               <Link to={"/"}>
-                <button className="profile-header__button">Logout</button>
+                <button onClick={handleLogout} className="profile-header__button">Logout</button>
               </Link>
             </div>
           </nav>

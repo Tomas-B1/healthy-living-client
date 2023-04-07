@@ -52,15 +52,15 @@ function WorkoutDetail({ workoutInfo }) {
         <div className="workoutDetail__info">
           <h2 className="workoutDetail__title">{workoutInfo.name.toUpperCase()}</h2>
           <h3 className="workoutDetail__muscle">Muscle:</h3>
-          <p>{workoutInfo.muscle}</p>
+          <p className="workoutDetail__muscleText">{workoutInfo.muscle}</p>
           <h3 className="workoutDetail__difficulty">Difficulty:</h3>
-          <p>{workoutInfo.difficulty}</p>
+          <p className="workoutDetail__diffText">{workoutInfo.difficulty}</p>
           <h3 className="workoutDetail__descTitle">Description</h3>
           <p className="workoutDetail__description">{workoutInfo.description}</p>
         </div>
-        <h3>Pick a day:</h3>
+        <h3 className="workoutDetail__aDay">Pick a day:</h3>
         <select
-          className="workouts__dropdown"
+          className="workoutDetail__dropdown"
           name="workouts"
           id="workouts"
           onChange={handleChange}
