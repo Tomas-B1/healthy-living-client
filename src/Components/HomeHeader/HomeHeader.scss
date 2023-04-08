@@ -13,6 +13,9 @@
         display: flex;
         justify-content: center;
         padding-top: 1rem;
+        @include tablet{
+            font-size: 2.5rem;
+        }
     }
 
     &__navbar a {
@@ -34,5 +37,10 @@
         align-items: center;
         border: none;
         background-color: #a4ac86;
+
+        @include tablet{
+            font-size: 1rem;
+            font-weight: 600;
+        }
     }
 }

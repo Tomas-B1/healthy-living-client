@@ -1,9 +1,18 @@
 import ProfileHeader from "../../Components/ProfileHeader/ProfileHeader";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import backArrow from "../../assets/icons/back-arrow.png"
 import axios from "axios";
+import "../../styles/schedule.scss"
 
 function Friday() {
   const [workout, setWorkout] = useState(null)
+
+  const navigate = useNavigate();
+    
+  const previousPage = () => {
+      navigate(-1);
+    }
 
   const userId = sessionStorage.getItem('user.id')
 
@@ -23,28 +32,34 @@ function Friday() {
     return(
       <>
       <ProfileHeader/>
-      <section className="monday">
-        <h2>Friday</h2>
-        <div className="monday__container">
-          <div className="monday__list">
+      <section className="schedule">
+      <img
+          className="schedule__arrow-icon"
+          src={backArrow}
+          alt="backArrow"
+          onClick={previousPage}
+        />
+        <h2 className="schedule__dayTitle">Friday</h2>
+        <div className="schedule__container">
+          <div className="schedule__list">
             {workout.map((workout) => {
               return (
-                <ul key={workout.id} className="monday__item">
+                <ul key={workout.id} className="schedule__item">
                   <li>
                     <img
-                      className="monday__image"
+                      className="schedule__image"
                       src={workout.product_img}
                       alt={workout.name}
                     />
                   </li>
                   <li>
-                      <h2 className="monday__title">{workout.name.toUpperCase()}</h2>
+                      <h2 className="schedule__title">{workout.name.toUpperCase()}</h2>
                   </li>
                   <li>    
-                      <p className="monday__muscle">{workout.muscle}</p>
+                      <p className="schedule__muscle">{workout.muscle}</p>
                   </li>
                   <li>    
-                      <p className="monday__difficulty">{workout.difficulty}</p>
+                      <p className="schedule__difficulty">{workout.difficulty}</p>
                   </li>
                 </ul>
               );

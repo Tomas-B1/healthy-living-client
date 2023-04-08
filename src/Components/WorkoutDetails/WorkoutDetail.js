@@ -6,6 +6,7 @@ import "./WorkoutDetails.scss";
 
 function WorkoutDetail({ workoutInfo }) {
   const [value, setValue]= useState('') 
+  const [successfulAdd, setSuccessfulAdd] = useState(false);
   const navigate = useNavigate();
     
     const previousPage = () => {
@@ -26,12 +27,11 @@ function WorkoutDetail({ workoutInfo }) {
           DayOfWeek: value
         })
         .then((response) => {
-          if (response.status === 200) {
-            // setSuccessfulAdd(true);
+          if (response.status === 201) {
+             setSuccessfulAdd(true);
           }
           })
         .catch((error) => {
-          // setDuplicateItem(true);
         });
       };
 
@@ -58,13 +58,14 @@ function WorkoutDetail({ workoutInfo }) {
           <h3 className="workoutDetail__descTitle">Description</h3>
           <p className="workoutDetail__description">{workoutInfo.description}</p>
         </div>
-        <h3 className="workoutDetail__aDay">Pick a day:</h3>
+        <h3 className="workoutDetail__aDay">Select a day:</h3>
         <select
           className="workoutDetail__dropdown"
           name="workouts"
           id="workouts"
           onChange={handleChange}
         >
+          <option>Choose Day:</option>
           <option value="monday">Monday</option>
           <option value="tuesday">Tuesday</option>
           <option value="wednesday">Wednesday</option>
@@ -75,6 +76,9 @@ function WorkoutDetail({ workoutInfo }) {
         </select>
         <button className="workoutDetail__button" onClick={handleAddWorkout}>Add Workout</button>
       </div>
+      <h2 className={`workoutDetail__message-success ${successfulAdd ? "workoutDetail__message-success--show" : ""}`}>
+          This workout was sucessfully added to your schedule
+        </h2>
     </section>
   );
 }

@@ -6,9 +6,17 @@
     height: 100vh;
     background-color: #f5ebe0;
 
+    @include tablet{
+        height: 90.5vh;
+    }
+
     &__title{
         text-align: center;
         padding-top: 15rem;
+        
+        @include tablet{
+            padding-top: 10rem;
+        }
     }
 
     &__form{
@@ -17,6 +25,14 @@
         justify-content: center;
         margin: 1rem auto;
         width: 80%;
+
+        @include tablet{
+            width: 60%; 
+        }
+
+        @include desktop{
+            width: 50%;
+        }
     }
 
     &__nameLabel{

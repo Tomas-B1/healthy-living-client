@@ -13,6 +13,10 @@
         justify-content: center;
         font-size: 2rem;
         padding-top: 1rem;
+
+        @include tablet{
+            font-size: 2.5rem;
+        }
     }
 
     &__navbar a {
@@ -35,5 +39,9 @@
         border: none;
         background-color: #a4ac86;
         font-weight: bold;
+
+        @include tablet{
+            font-size: 1rem;
+        }
     }
 }

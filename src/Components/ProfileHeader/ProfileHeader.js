@@ -11,7 +11,7 @@ function ProfileHeader() {
     return (
         <header className="profile-header">
           <nav className="profile-header__navbar">
-              <Link to="/"> 
+              <Link to="/userprofile"> 
                 <h1 className="profile-header__name">Healthy Living</h1>
               </Link>
             <div className="profile-header__routes">

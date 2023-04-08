@@ -1,3 +1,7 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
 .workoutDetail{
     height: 100vh;
     background-color: #f5ebe0;
@@ -16,20 +20,53 @@
         display: flex;
         margin: 0 auto;
         width: 14rem;
+        border: 1px solid  #a4ac86;
+        border-radius: 0.25rem;
+
+        @include desktop{
+            width: 20%;
+        }
     }
 
     &__title{
         padding-top: 2rem;
         text-align: center;
+        @include desktop{
+            font-size: 2rem;
+        }
     }
 
     &__muscle, &__muscleText, &__difficulty, &__diffText, &__descTitle, &__description{
         text-align: center;
     }
 
+    &__muscle, &__difficulty,&__descTitle{
+        @include desktop{
+            font-size: 1.5rem;
+        }
+    }
+
+    &__muscleText, &__description, &__diffText{
+    @include desktop{
+        width: 50%;
+        font-size: 1.125rem;
+        margin: 0 auto;
+    }
+    }
+
+    &__description{
+        @include tablet{
+            width: 46rem;
+            margin: 0 auto;
+        }
+    }
+
     &__aDay{
         text-align: center;
         padding-top: 2rem;
+        @include desktop{
+            font-size: 1.5rem;
+        }
     }
 
     &__dropdown{
@@ -48,5 +85,23 @@
         align-items: center;
         margin: 1rem auto;
         background-color: #a4ac86;
+
+        @include desktop{
+            font-size: 1rem;
+        }
+    }
+
+    &__message-success {
+        color:  rgb(8, 117, 8);
+        font-size: 1.25rem;
+        padding-left: 1rem;
+        display: none;
+
+        &--show {
+            display: flex;
+            @include tablet{
+                justify-content: center;
+            }
+        }
     }
 }

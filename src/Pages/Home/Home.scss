@@ -1,4 +1,12 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/typography" as *;
+@use "../../styles/variables" as *;
+
 .home-page{
     background-color: #f5ebe0;
     height: 115vh;
+
+    @include desktop{
+        height: 89.8vh;
+    }
 }

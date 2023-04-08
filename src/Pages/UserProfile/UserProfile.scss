@@ -6,6 +6,18 @@
     height: 100vh;
     background-color: #f5ebe0;
 
+    @include tablet{
+        height: 90.7vh;
+    }
+
+    &__container{
+        @include desktop{
+            display: flex;
+            width: 80%;
+            margin: 2rem auto;
+        }
+    }
+
     &__title{
         font-size: 2rem;
         text-align: center;
@@ -27,6 +39,11 @@
         border-radius: 0.25rem;
         width: 100%;
         background-color: white;
+
+        @include desktop{
+            width: 70%;
+            margin: 0 auto;
+        }
     }
 
     &__workouts-img{
@@ -42,6 +59,11 @@
         border-radius: 0.25rem;
         width: 100%;
         background-color: white;
+
+        @include desktop{
+            width: 70%;
+            margin: 0 auto;
+        }
     }
 
     &__plans-img{
@@ -54,12 +76,20 @@
         color: black;
         font-weight: bold;
         padding-bottom: 1rem;
+
+        @include desktop{
+            font-size: 1.5rem;
+        }
     }
 
     &__plans-text{
         color: black;
         font-weight: bold;
         padding-bottom: 1rem;
+
+        @include desktop{
+            font-size: 1.5rem;
+        }
     }
 
 }

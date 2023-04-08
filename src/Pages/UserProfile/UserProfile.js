@@ -26,7 +26,6 @@ function UserProfile() {
             })
             .then(response => {
                 setUser(response.data);
-                console.log(response.data[0].id)
                 sessionStorage.setItem("user.id", response.data[0].id)
             })
             .catch(error => {
@@ -44,6 +43,7 @@ function UserProfile() {
             <ProfileHeader/>
             <section className="home">
                 <h1 className="home__title">Welcome Back {user[0].name}!</h1>
+                <div className="home__container">
                     <Link to="/workout" className="home__links">
                         <div className="home__workouts">
                             <img className="home__workouts-img" src={dumbbell} alt="Dumbbell"/>
@@ -56,6 +56,7 @@ function UserProfile() {
                             <p className="home__plans-text">View Workout Plans</p>
                         </div>
                     </Link>
+                </div>    
             </section>
             </>
         );

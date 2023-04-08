@@ -71,12 +71,8 @@ function WorkoutList() {
        );
       setWorkout(muscle)
       setOption(event.target.value)
-   }  else if (event.target.value === "All Workouts"){
-      muscle = workout.filter(
-        (work) => work.muscle === "Biceps"||"Calves"||"Peactorals"||"Traps"||"Triceps"||"Quads"||"Upper back"
-      );
-      setWorkout(muscle)
-      setOption(event.target.value)
+   }  else if (event.target.value === "All"){
+      window.location.reload();
   }
   }
 
@@ -100,7 +96,7 @@ function WorkoutList() {
           <option value="Upper Back">Upper Back</option>
         </select>
 
-        <ul className="workouts__list">
+        <div className="workouts__list">
         {workout.map((workout) => {
           return (    
           <WorkoutCard
@@ -112,7 +108,7 @@ function WorkoutList() {
         />
           );
         })}
-      </ul>
+      </div>
       </main>
     );
   }

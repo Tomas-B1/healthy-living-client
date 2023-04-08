@@ -1,0 +1,73 @@
+@use "../styles/mixins" as *;
+@use "../styles/typography" as *;
+@use "../styles/variables" as *;
+
+.schedule{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 120vh;
+    margin: 0 auto;
+    background-color: #f5ebe0;
+
+    &__list{
+        @include desktop{
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    &__arrow-icon{
+        width: 2.5rem;
+        display: flex;
+        align-items: flex-start;
+        padding: 1rem 0 0 1rem;
+    }
+
+    &__item{
+        border: 1px solid  #a4ac86;
+        border-radius: 0.25rem;
+        background-color: white;
+        list-style: none;
+        padding: 0;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin: 1rem auto;
+
+        @include desktop{  
+            width: 30rem;
+        }
+    }
+
+    &__dayTitle{
+        text-align: center;
+        @include desktop{
+            font-size: 2rem;
+            margin: 2rem 0;   
+        }
+    }
+
+    &__image{
+        display: flex;
+        margin: 1rem auto;
+        width: 8rem;
+    }
+
+    &__title{
+        margin: 0.5rem auto;
+        text-align: center;
+    }
+
+    &__muscle{
+        text-align: center;
+        margin: 0;
+    }
+
+    &__difficulty{
+        text-align: center;
+        margin: 0.5rem auto;
+    }
+}
