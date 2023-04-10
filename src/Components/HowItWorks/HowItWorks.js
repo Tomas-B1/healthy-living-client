@@ -2,6 +2,7 @@ import "./HowItWorks.scss";
 import checkmark from "../../assets/icons/check-symbol.png"
 import dumbbell from "../../assets/icons/dumbbell-symbol.png"
 import profile from "../../assets/icons/profile-symbol.png"
+import recipe from "../../assets/icons/recipes.png"
 import { Link } from 'react-router-dom';
 
 function HomeHeader() {
@@ -22,11 +23,15 @@ function HomeHeader() {
                 <img className="info__icon" src={profile} alt="profile"/>
                 <p className="info__text info__profileText">Save workouts to your personal profile</p>
             </div>
+            <div className="info__profile">
+                <img className="info__icon" src={recipe} alt="profile"/>
+                <p className="info__text info__profileText">Find new healthy recipes</p>
+            </div>
           </div>  
             <div className="whyChoose">
                 <h2 className="whyChoose__title">WHY CHOOSE HEALTHY LIVING?</h2>
                 <div className="whyChoose__container">
-                    <p className="whyChoose__text">Joining the Healthy Living community will grant you access and the ability to save workouts to your profile, helping you obtain your fitness goals.</p>
+                    <p className="whyChoose__text">Joining the Healthy Living community will grant you access and the ability to save workouts to your user profile and find new delicous healthy meals. Making it easier for you to obtain your fitness goals.</p>
                 </div>
             </div>   
         </section>

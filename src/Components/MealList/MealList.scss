@@ -1,0 +1,28 @@
+@use "../../styles/global" as *;
+@use "../../styles/mixins" as *;
+@use "../../styles/variables" as *;
+
+.meal{
+    background-color: #f5ebe0;
+
+    &__title{
+        text-align: center;
+        padding: 1rem 0 0 0;
+    }
+
+    &__dropdown{
+        display: flex;
+        margin: 1rem auto;
+    }
+
+    &__list{
+    padding: 0;
+
+    @include desktop{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        width: 100%;
+        justify-content: center;
+    }
+    }
+}

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import dumbbell from "../../assets/icons/white-dumbbell.png"
 import workoutPlans from "../../assets/icons/workout-plans.png"
+import meals from "../../assets/icons/meals.png"
 import ProfileHeader from "../../Components/ProfileHeader/ProfileHeader"
 import "./UserProfile.scss"
 
@@ -54,6 +55,12 @@ function UserProfile() {
                         <div className="home__plans">
                             <img className="home__plans-img" src={workoutPlans} alt="Workout plan"/>
                             <p className="home__plans-text">View Workout Plans</p>
+                        </div>
+                    </Link>
+                    <Link to="/meals" className="home__links">
+                        <div className="home__plans">
+                            <img className="home__plans-img" src={meals} alt="Workout plan"/>
+                            <p className="home__plans-text">View Meals</p>
                         </div>
                     </Link>
                 </div>    

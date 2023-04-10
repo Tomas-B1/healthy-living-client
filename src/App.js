@@ -6,6 +6,8 @@ import Workout from "./Pages/Workout/Workout";
 import WorkoutInfo from "./Pages/WorkoutInfo/WorkoutInfo"
 import UserProfile from "./Pages/UserProfile/UserProfile";
 import WorkoutPlans from "./Pages/WorkoutPlans/WorkoutPlans";
+import Meals from "./Pages/Meals/Meal"
+import MealInfo from "./Pages/MealInfo/MealInfo";
 import Monday from "./Pages/Monday/Monday";
 import Tuesday from "./Pages/Tuesday/Tuesday";
 import Wednesday from "./Pages/Wednesday/Wednesday";
@@ -26,6 +28,8 @@ function App() {
         <Route path="/workout" element={<Workout />} />
         <Route path="/workout/:id" element={<WorkoutInfo />} />
         <Route path="/workoutplans" element={<WorkoutPlans/>}/>
+        <Route path="/meals" element={<Meals/>}/>
+        <Route path="/meals/:id" element={<MealInfo/>}/>
         <Route path="/monday" element={<Monday/>}/>
         <Route path="/tuesday" element={<Tuesday/>}/>
         <Route path="/wednesday" element={<Wednesday/>}/>

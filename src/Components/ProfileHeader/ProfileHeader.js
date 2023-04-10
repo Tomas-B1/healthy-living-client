@@ -18,6 +18,9 @@ function ProfileHeader() {
             <Link to={"/workout"}>
                 <button className="profile-header__button">Workouts</button>
               </Link>
+              <Link to={"/meals"}>
+                <button className="profile-header__button">Meals</button>
+              </Link>
               <Link to={"/workoutplans"}>
                 <button className="profile-header__button">Workout Plans</button>
               </Link>
