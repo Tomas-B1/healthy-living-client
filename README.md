@@ -16,7 +16,7 @@ Clone this repository
 $ git clone git@github.com:Tomas-B1/healthy-living-client.git
 
 Go into the repository
-$ cd scheduling-companion
+$ cd capstone-tomas-bojkovski-client 
 
 Install dependencies
 $ npm install
