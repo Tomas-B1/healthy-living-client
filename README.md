@@ -2,7 +2,7 @@ In todays world everyone is so busy, and its hard to keep track of certain thing
 
 Healthy Living verifies the user with the login feature for existence in the database. Then the users can search through workouts for multiple body types and save them in the schedule that is its own database so they have it saved for future days for reference.
 
-You can check out the website at healthylivingtoday.netlify.app
+You can check out the website at https://healthylivingtoday.netlify.app/
 
 For test examples signup with name, email and password. You will then be redirected to the login page where you can log in. Once logged in you can explore the website by viewing workouts and saving them to your selected day, also you can view the multiple meals with the ingredients and directions also provided to you.
 Design is a responsive layout and can be used on mobile, tablet, and desktop devices.
