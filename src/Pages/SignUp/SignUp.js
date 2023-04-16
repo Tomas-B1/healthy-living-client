@@ -3,13 +3,15 @@ import axios from "axios";
 import HomeHeader from '../../Components/HomeHeader/HomeHeader';
 import "./SignUp.scss";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Register() {
     const navigate = useNavigate();
     
     const handleRegister = (event) => {
         event.preventDefault();
 
-        axios.post("http://localhost:8080/user/register", {
+        axios.post(`${API_URL}/user/register`, {
             email: event.target.email.value,
             name: event.target.name.value,
             password: event.target.password.value

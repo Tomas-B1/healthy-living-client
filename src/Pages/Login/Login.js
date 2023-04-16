@@ -3,6 +3,8 @@ import axios from "axios";
 import HomeHeader from '../../Components/HomeHeader/HomeHeader';
 import "./Login.scss";
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function Login() {
     const navigate = useNavigate();
     
@@ -13,7 +15,7 @@ function Login() {
     const handleRegister = (event) => {
         event.preventDefault();
 
-        axios.post("http://localhost:8080/user/login", {
+        axios.post(`${API_URL}/user/login`, {
             email: event.target.email.value,
             name: event.target.name.value,
             password: event.target.password.value
