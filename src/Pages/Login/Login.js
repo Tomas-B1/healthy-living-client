@@ -21,6 +21,7 @@ function Login() {
             password: event.target.password.value
         })
         .then(response => {
+            res.setHeader("Access-Control-Allow-Origin", "https://healthylivingtoday.netlify.app");
             localStorage.authToken = response.data.token;
             navigate("/userprofile");
         })
