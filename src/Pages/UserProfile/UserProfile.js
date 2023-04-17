@@ -7,6 +7,8 @@ import meals from "../../assets/icons/meals.png"
 import ProfileHeader from "../../Components/ProfileHeader/ProfileHeader"
 import "./UserProfile.scss"
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function UserProfile() {
     const [user, setUser]= useState("")
     const navigate = useNavigate();
@@ -20,7 +22,7 @@ function UserProfile() {
         }
 
         axios
-            .get("http://localhost:8080/user", {
+            .get(`${API_URL}/user`, {
                 headers: {
                     Authorization: `Bearer ${jwtToken}`
                 }

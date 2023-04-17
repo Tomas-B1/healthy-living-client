@@ -3,6 +3,8 @@ import WorkoutCard from "../WorkoutCard/WorkoutCard"
 import axios from "axios";
 import "../WorkoutList/WorkoutList.scss"
 
+const API_URL = process.env.REACT_APP_API_URL;
+
 function WorkoutList() {
   const [workout, setWorkout] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -10,7 +12,7 @@ function WorkoutList() {
   let muscle;
 
   useEffect(() => {
-      axios.get(`http://localhost:8080/workout`)
+      axios.get(`${API_URL}/workout`)
     .then((response) => {
       setWorkout(response.data);
       setIsLoading(false);
